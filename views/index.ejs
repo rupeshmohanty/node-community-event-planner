@@ -1,0 +1,46 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Event Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a href="/add-event" class="btn btn-info">Add an event</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- Header Part -->
+<h1 class="display-4 text-center mt-4">
+    Welcome to your own Online Community Event Planner!
+</h1>
+
+<div class="container">
+    <div class="row">
+        <% events.forEach(event => { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title display-4">
+                            <%= event.title %>
+                        </div>
+                        <div class="card-subtitle text-muted">
+                            <%= event.createdAt %>
+                        </div>
+                        <div class="card-text">
+                            <%= event.description %>
+                        </div>
+                        <div class="card-text">
+                            <%= event.event_created %>
+                        </div>
+                        <a href="/show-event" class="btn btn-primary">See More Details</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
