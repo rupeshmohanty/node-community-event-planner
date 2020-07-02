@@ -1,14 +1,18 @@
 <div class="container">
-    <h1 class="mb-1"><%= event.title %></h1>
+    <h1 class="mb-1"><%= event.title %></h1><br>
     <div class="text-muted">
-        <%= event.createdAt %>
-    </div>
+        <%= event.createdAt.toLocaleDateString() %>
+    </div><br>
     <div>
         <%= event.description %>
-    </div>
+    </div><br>
     <div>
-        Event date: <%= event.event_date %>
-    </div>
+        Event date: <%= event.event_date.toLocaleDateString() %>
+    </div><br>
 
     <a href="/" class="btn btn-secondary">All events</a>
+    <a href="/edit-event/<%= event.id %>" class="btn btn-info">Edit</a>
+    <form action="/<%= event.id %>?_method=DELETE" method="POST" class="d-inline">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 </div>
